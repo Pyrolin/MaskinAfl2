@@ -4,7 +4,7 @@
 int main()
 {
     FILE *fh;
-    fh = fopen("C:/Users/Madsh/OneDrive/Dokumenter/GitHub/MaskinAfl2/kort.txt, "r");
+    fh = fopen("./kort.txt", "r");
     if (fh != NULL)
     {
         char c = fgetc

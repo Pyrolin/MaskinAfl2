@@ -3,7 +3,7 @@
 
 int main()
 {
-    FILE *f = fopen("C:/Users/Madsh/OneDrive/Skrivebord/Ny mappe/Test/kort.txt", "w");
+    FILE *f = fopen("./kort.txt", "w");
     if (f == NULL)
     {
         printf("Error opening file!\n");
