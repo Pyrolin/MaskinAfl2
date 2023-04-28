@@ -7,12 +7,15 @@ int main()
     fh = fopen("C:/Users/Madsh/OneDrive/Dokumenter/GitHub/MaskinAfl2/kort.txt, "r");
     if (fh != NULL)
     {
-        char c;
+        char c = fgetc
+        Deck deck = CreateDeck
+
         while ( (c = fgetc(fh)) != EOF )
-            putchar(c);
+            add to deck. deck char suit
 
         fclose(fh);
     }
     else printf("Error opening file\n");
     return 0;
 }
+
