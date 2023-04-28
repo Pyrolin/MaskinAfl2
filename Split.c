@@ -19,3 +19,30 @@ void shuffle(int deck[], int size, int split){
         pile2[i - split] = deck[i];
     }
 }
+
+void splitDeck(Deck *list, int split) {
+// list points to the head of a linked list of Flights
+    int count = 1;
+
+    Deck **deck1 = newDeck();
+    Deck **deck2 = newDeck();
+
+    while (list != NULL) { // while not at the end
+        if (count < split) {
+            **deck1 = addToDeck(**deck1, list->suit, list->value);
+        } else {
+            **deck2 = addToDeck(**deck2, list->suit, list->value);
+        }
+
+        count = count + 1;
+        list = list->next; // move to next node
+    }
+
+    while (*deck1 != NULL && *deck2 != NULL) {
+        if (*deck1 != NULL ) {
+
+        }
+    }
+
+
+}

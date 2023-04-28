@@ -1,4 +1,4 @@
-// C = Clubs, D = Diamonds, H = Hearts, S = Spades
+// C = Clubs, D = Diamonds, H = Hearts, S = Spades, A = Ace, T = 10, J = Jack, Q = Queen, K = King.
 AC
 2C
 3C

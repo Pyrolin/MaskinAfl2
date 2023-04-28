@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <malloc.h>
+#include "main.h"
 
 /* How we could implement a linked list
 typedef struct deckType Deck;
@@ -27,8 +28,7 @@ Deck * CreateDeck(char value, char suit) {
 
 
 int main(int argc, char *argv[]) {
-    int isRunning = 1; // True/False
-    char PHASE[] = "STARTUP";
+    isRunning = 1; // True/False
 
     createBoard(); //Not implemented yet, should render the initial empty board
 
