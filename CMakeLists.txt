@@ -4,4 +4,4 @@ project(MaskinAfl2 C)
 set(CMAKE_C_STANDARD 11)
 
 add_executable(MaskinAfl2
-        Main.c Load.c Load.c Save.c Linkedlists.c AddToDeck.c)
+        Main.c Load.c Load.c Save.c Linkedlists.c AddToDeck.c Split.c)
