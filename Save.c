@@ -12,7 +12,7 @@ int main()
 
     const char *text = "TestTest";
     fprintf(f, "Ekstra test: %s\n", text);
-    
+
     fclose(f);
     return(0);
 }
