@@ -6,7 +6,7 @@ void Printdeck(Card *list){
     int count = 1;
     printf("cards on the fields");
     while (list != NULL) {
-        printf("cards: %d\n", count);
+        printf("Value: %c - Suit: %c\n", list->value, list->suit);
 
         count = count + 1;
         list = list ->next; // move to next node

@@ -4,12 +4,10 @@
 
 typedef struct CardType Card;
 
-Card *list = NULL;
-
 struct CardType {
     char value;
     char suit;
-    struct CardType next;
+    Card *next;
 };
 
 #endif
