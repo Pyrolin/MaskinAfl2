@@ -11,5 +11,6 @@ Card * CreateCard(char value, char suit) {
     newCard->suit = suit;
 // initialize pointer
     newCard->next = NULL;
+
     return newCard;
 }
