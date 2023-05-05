@@ -1,10 +1,10 @@
-
+#include "linkedlists.h"
 #include <stdio.h>
 
-void Printdeck(deck *list){
+void Printdeck(Card *list){
     // list points to the head of a linked list of cards
     int count = 1;
-    Printdeck("cards on the fields");
+    printf("cards on the fields");
     while (list != NULL) {
         printf("cards: %d\n", count);
 
