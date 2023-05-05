@@ -1,21 +1,40 @@
 #include<stdio.h>
 #include<conio.h>
+#include "linkedlists.h"
+#include "linkedlists.c"
+#include "view.c"
+#include "addToDeck.c"
 
-int main()
+int Load()
 {
     FILE *fh;
-    fh = fopen("./kort.txt", "r");
+    char line[4];
+    fh = fopen("..\\kort.txt", "r");
     if (fh != NULL)
     {
-        char c = fgetc
-        Deck deck = CreateDeck
+        Card *firstCard = NULL;
+        Card *prevCard = NULL;
 
-        while ( (c = fgetc(fh)) != EOF )
-            add to deck. deck char suit
+        while (fgets(line, 4, fh)) {
+            if (firstCard == NULL) {
+                firstCard = CreateCard(line[0], line[1]);
+                AddToDeck(firstCard, NULL);
+                prevCard = firstCard;
+
+            } else {
+
+                Card *thisCard = CreateCard(line[0], line[1]);
+                AddToDeck(thisCard, prevCard);
+                prevCard = thisCard;
+
+            }
+        }
 
         fclose(fh);
+        Printdeck(firstCard);
     }
     else printf("Error opening file\n");
+
     return 0;
 }
 
