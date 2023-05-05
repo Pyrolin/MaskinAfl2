@@ -1,4 +1,12 @@
-int AddToDeck(Card newCard, Card **deck) {
+#include "linkedlists.h"
+#include <stdio.h>
+
+/**
+ * Adds a card to the deck
+ * @param newCard The card that should be added to the deck
+ * @param deck The current last card in the deck, NULL if none
+ */
+void AddToDeck(Card *newCard, Card **deck) {
     Card *previous = NULL;
     Card *current = *deck;
 
@@ -13,5 +21,4 @@ int AddToDeck(Card newCard, Card **deck) {
     } else {
         previous->next = newCard;
     }
-    return 0;
 }
