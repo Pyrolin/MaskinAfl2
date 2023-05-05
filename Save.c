@@ -1,9 +1,9 @@
 #include <stdio.h>
 #include "stdlib.h"
 
-int main()
+int Save()
 {
-    FILE *f = fopen("./kort.txt", "w");
+    FILE *f = fopen("..\\kort.txt", "w");
     if (f == NULL)
     {
         printf("Error opening file!\n");
