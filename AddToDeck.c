@@ -6,7 +6,7 @@
  * @param newCard The card that should be added to the deck
  * @param deck The current last card in the deck, NULL if none
  */
-void AddToDeck(Card *newCard, Card **deck) {
+Card AddToDeck(Card *newCard, Card **deck) {
     Card *previous = NULL;
     Card *current = *deck;
 
@@ -21,4 +21,5 @@ void AddToDeck(Card *newCard, Card **deck) {
     } else {
         previous->next = newCard;
     }
+    return *newCard;
 }
