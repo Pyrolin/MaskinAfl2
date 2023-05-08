@@ -4,7 +4,7 @@
 #include "linkedlists.h"
 #include "Save.c"
 #include "Quit.c"
-void startPhase(char input) {
+void startPhase(char input[]) {
        if(input == 'LD') {
            Load();
        }
@@ -29,7 +29,7 @@ void startPhase(char input) {
        }
     }
 
-void playPhase(char input) {
+void playPhase(char input[]) {
     if (input =='Q'){
         //do the return command
     }
