@@ -1,28 +1,24 @@
-#include "Load.c"
-#include "stdio.h"
-#include "Split.c"
-#include "linkedlists.h"
-#include "Save.c"
-#include "Quit.c"
+#include <stdio.h>
+#include <string.h>
 void startPhase(char input[]) {
-       if(input == 'LD') {
-           Load();
+       if(strcmp(input, "LD") != 0) {
+           //Load();
        }
 
-       if(input == 'SW'){
-           showCards();
+       if(strcmp(input, "SC") != 0){
+           //showCards();
        }
-       if(input == 'SL'){
-           splitDeck();
+       if(strcmp(input, "SD") != 0){
+           //splitDeck();
        }
-       if(input == 'SR'){
-           shuffleDeck();
+       if(strcmp(input, "SH") != 0){
+           //shuffleDeck();
        }
-       if(input == 'SD'){
-           Save();
+       if(strcmp(input, "S") != 0){
+           //Save();
        }
-       if(input == 'QQ'){
-           quit();
+       if(strcmp(input, "QQ") != 0){
+           //quit();
        }
        else {
            printf("Command not available in the STARTUP phase.");
@@ -30,7 +26,7 @@ void startPhase(char input[]) {
     }
 
 void playPhase(char input[]) {
-    if (input =='Q'){
+    if (strcmp(input, "Q") != 0){
         //do the return command
     }
     //move function
