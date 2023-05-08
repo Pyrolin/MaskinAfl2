@@ -1,5 +1,4 @@
 #include "linkedlists.h"
-#include <stdio.h>
 #include <malloc.h>
 
 Card * CreateCard(char value, char suit) {
