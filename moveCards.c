@@ -1,4 +1,8 @@
 #include <string.h>
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 void moveCards(char command[]) {
     char srcCard[2];
     char destColumn[2];
@@ -8,6 +12,7 @@ void moveCards(char command[]) {
     strncpy(srcColoumn,command,2);
     if(strcmp(srcColoumn,"c1")){
 
+<<<<<<< Updated upstream
     }
     if(strcmp(srcColoumn,"c2")){
 
@@ -39,4 +44,7 @@ void moveCards(char command[]) {
     if(strcmp(srcColoumn,"f4")){
 
     }
+=======
+
+>>>>>>> Stashed changes
 }
