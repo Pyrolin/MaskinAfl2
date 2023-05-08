@@ -91,7 +91,21 @@ void printBoard(char message[]) {
         }
 
         if (F_insert) {
-            printf("[]  F%d", F_Cards);
+            char showCard[3];
+
+
+            if (F_Cards == 1 && F1) {
+                printf("%c%c  F%d", F1->previous->previous->value, F1->previous->previous->suit, F_Cards);
+            } else if (F_Cards == 2 && F2) {
+                printf("%c%c  F%d", F2->previous->previous->value, F2->previous->previous->suit, F_Cards);
+            } else if (F_Cards == 3 && F3) {
+                printf("%c%c  F%d", F3->previous->previous->value, F3->previous->previous->suit, F_Cards);
+            } else if (F_Cards == 4 && F4) {
+                printf("%c%c  F%d", F4->previous->previous->value, F4->previous->previous->suit, F_Cards);
+            } else {
+                printf("[]  F%d", F_Cards);
+            }
+
             F_insert = 0;
             F_Cards++;
         } else if (!F_Cards || F_Cards <= 4) {
