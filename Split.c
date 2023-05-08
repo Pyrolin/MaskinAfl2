@@ -1,16 +1,15 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <time.h>
 #include "linkedlists.h"
-#include "AddToDeck.c"
+#include "addToDeck.c"
 #define MAX_CARDS 52
 
-void shuffleDeck(Card **card1, Card **card2) {
+void shuffleDeck(Card *card1, Card *card2) {
 Card *lastNode = card1;
 while (lastNode->next != NULL) {
     lastNode = lastNode->next;
 }
-lastNode->next = *card2;
+lastNode->next = card2;
 
 int length = 0;
         for (Card *node = card1; node != NULL; node = node->next) {
@@ -40,9 +39,9 @@ void splitAndShuffleDeck(Card *card, int split) {
         newNode->next = NULL;
 
         if (count <= split) {
-            AddToDeck(newNode, &deck1);
+            AddToDeck(newNode, deck1);
         } else {
-            AddToDeck(newNode, &deck2);
+            AddToDeck(newNode, deck2);
         }
         count++;
         card = card->next;
@@ -60,14 +59,14 @@ void splitDeck(Card *card, int split) {
 // list points to the head of a linked list of Flights
     int count = 1;
 
-    Card **deck1 = NULL;
-    Card **deck2 = NULL;
+    Card *deck1 = NULL;
+    Card *deck2 = NULL;
 
     while (card != NULL) { // while not at the end
         if (count < split) {
-            **deck1 = AddToDeck(card, deck1);
+            *deck1 = AddToDeck(card, deck1);
         } else {
-            **deck2 = AddToDeck(card, deck2);
+            *deck2 = AddToDeck(card, deck2);
         }
 
         count = count + 1;
