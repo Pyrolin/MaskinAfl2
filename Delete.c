@@ -1,11 +1,8 @@
 #include <stdio.h>
-#include "Linkedlists.h"
+#include "linkedlists.h"
 
 void DeleteList(Card* temp)
 {
-    while(temp->next->next!=NULL)
-    {
-        temp= temp->next ;
-    }
-    temp->next= NULL;
+    temp->previous->next = temp->next;
+    temp->next->previous = temp->previous;
 }
