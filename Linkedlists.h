@@ -8,6 +8,7 @@ struct CardType {
     char value;
     char suit;
     Card *next;
+    Card *previous;
 };
 
 #endif
