@@ -1,3 +1,3 @@
 void moveCards(char command[]) {
-    
+
 }
