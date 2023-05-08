@@ -1,6 +1,7 @@
-#ifndef __LINKED_H__
-#define __LINKED_H__
+#ifndef __LINKEDLIST_H__
+#define __LINKEDLIST_H__
 #include <stdio.h>
+
 
 typedef struct CardType Card;
 
