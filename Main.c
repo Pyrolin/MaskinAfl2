@@ -2,7 +2,7 @@
 #include <string.h>
 #include <malloc.h>
 #include "main.h"
-#include "Load.c"
+#include "load.c"
 
 /* How we could implement a linked list
 typedef struct deckType Deck;
@@ -29,7 +29,7 @@ Deck * CreateDeck(char value, char suit) {
 
 
 int main(int argc, char *argv[]) {
-    Load();
+    load();
     /* Temp commented for testing
     isRunning = 1; // True/False
 
