@@ -2,19 +2,6 @@
 #include <stdio.h>
 #include "main.h"
 
-void Printdeck(Card *list){
-    // list points to the head of a linked list of cards
-    int count = 1;
-    printf("cards on the fields");
-    while (list != NULL) {
-        printf("Value: %c - Suit: %c\n", list->value, list->suit);
-
-        count = count + 1;
-        list = list ->next; // move to next node
-    }
-    printf("\n\n");
-}
-
 void printBoard(char message[]) {
 
     int hasCards = 1;
@@ -31,7 +18,7 @@ void printBoard(char message[]) {
     int F_insert = 1;
 
 
-    printf("C1  C2  C3  C4  C5  C6  C7 \n\n");
+    printf("C1    C2    C3    C4    C5    C6    C7 \n\n");
 
     while (hasCards) {
         if (C1 && C1->suit != 'X') {
@@ -39,7 +26,7 @@ void printBoard(char message[]) {
             C1 = C1->next;
         } else {
             C1_Cards = 0;
-            printf("        ");
+            printf("      ");
         }
 
         if (C2 && C2->suit != 'X') {
@@ -47,7 +34,7 @@ void printBoard(char message[]) {
             C2 = C2->next;
         } else {
             C2_Cards = 0;
-            printf("        ");
+            printf("      ");
         }
 
         if (C3 && C3->suit != 'X') {
@@ -55,7 +42,7 @@ void printBoard(char message[]) {
             C3 = C3->next;
         } else {
             C3_Cards = 0;
-            printf("        ");
+            printf("      ");
         }
 
         if (C4 && C4->suit != 'X') {
@@ -63,7 +50,7 @@ void printBoard(char message[]) {
             C4 = C4->next;
         } else {
             C4_Cards = 0;
-            printf("        ");
+            printf("      ");
         }
 
         if (C5 && C5->suit != 'X') {
@@ -71,7 +58,7 @@ void printBoard(char message[]) {
             C5 = C5->next;
         } else {
             C5_Cards = 0;
-            printf("        ");
+            printf("      ");
         }
 
         if (C6 && C6->suit != 'X') {
@@ -79,7 +66,7 @@ void printBoard(char message[]) {
             C6 = C6->next;
         } else {
             C6_Cards = 0;
-            printf("        ");
+            printf("      ");
         }
 
         if (C7 && C7->suit != 'X') {
@@ -87,7 +74,7 @@ void printBoard(char message[]) {
             C7 = C7->next;
         } else {
             C7_Cards = 0;
-            printf("        ");
+            printf("      ");
         }
 
         if (F_insert) {
