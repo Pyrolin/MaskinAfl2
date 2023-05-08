@@ -4,29 +4,23 @@
 /**
  * Adds a card to the deck
  * @param newCard The card that should be added to the deck
- * @param deck The current last card in the deck, NULL if none
+ * @param card The current last card in the deck, NULL if none
  */
-Card AddToDeck(Card *newCard, Card *deck) {
-    Card *dummy = CreateCard('X','X');
+Card* AddToDeck(Card *newCard, Card *card) {
+    Card *dummy = NULL;
 
+    if (card != NULL) {
+        dummy = card->next;
+        card->next = newCard;
+        newCard->previous = card;
+    } else {
+        dummy = CreateCard('X','X');
 
-
-    Card *previous = NULL;
-
-    if (deck != NULL) {
-        Card *current = deck;
-        while (current != NULL) {
-            previous = current;
-            current = current->next;
-        }
-        previous->next = newCard;
-    }
-    else (deck = NULL); {
-        newCard->previous = &dummy;
+        newCard->previous = dummy;
         dummy->next = newCard;
     }
 
-    newCard->next = dummy;
     dummy->previous = newCard;
-    return *newCard;
+    newCard->next = dummy;
+    return newCard;
 }
