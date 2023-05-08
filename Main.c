@@ -43,7 +43,7 @@ int main(int argc, char *argv[]) {
 
             char** response = executePlayCommand(input); //Not implemented yet
             // response would be an array of strings,
-            // response[0] would be either "ERROR" or "SUCCES"
+            // response[0] would be either "ERROR" or "SUCCESS"
             // and response[1] would be the message that should be displayed
 
             printBoard(response[0], response[1]); //Not implemented yet
