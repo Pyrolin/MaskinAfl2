@@ -2,7 +2,6 @@
 #define __MAIN_H__
 
 #include "linkedlists.h"
-#include "linkedlists.c"
 
 int isRunning;
 char PHASE[]  = "STARTUP";
