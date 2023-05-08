@@ -4,7 +4,7 @@
 #include <stdio.h>
 #include <string.h>
 #include "stdlib.h"
-
+/*
 void fillBoard(Deck deck1){
     if (Column1 >1){
         addCard(Deck deck1);
@@ -28,3 +28,4 @@ void fillBoard(Deck deck1){
         addCard(Deck deck1)
     }
 }
+*/
