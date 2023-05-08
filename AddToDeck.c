@@ -7,6 +7,10 @@
  * @param deck The current last card in the deck, NULL if none
  */
 Card AddToDeck(Card *newCard, Card *deck) {
+    Card *dummy = CreateCard('X','X');
+
+
+
     Card *previous = NULL;
 
     if (deck != NULL) {
@@ -15,12 +19,14 @@ Card AddToDeck(Card *newCard, Card *deck) {
             previous = current;
             current = current->next;
         }
-
-    }
-
-    newCard->next = NULL;
-    if (deck != NULL) {
         previous->next = newCard;
     }
+    else (deck = NULL); {
+        newCard->previous = &dummy;
+        dummy->next = newCard;
+    }
+
+    newCard->next = dummy;
+    dummy->previous = newCard;
     return *newCard;
 }
