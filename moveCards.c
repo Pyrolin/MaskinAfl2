@@ -1,6 +1,5 @@
 #include <string.h>
-#include "main.h"
-
+#include "linkedlists.h"
 
 void moveToDst(Card *card, char command[]) {
     /*
@@ -49,6 +48,14 @@ void moveCards(char command[]) {
     extern Card* C5;
     extern Card* C6;
     extern Card* C7;
+
+    extern Card* F1;
+    extern Card* F2;
+    extern Card* F3;
+    extern Card* F4;
+
+
+    extern char message[];
 
     char srcCard[2];
     char destColumn[2];

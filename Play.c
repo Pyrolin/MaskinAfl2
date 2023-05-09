@@ -1,4 +1,3 @@
-#include "main.h"
 #include "dealCards.h"
 #include "string.h"
 

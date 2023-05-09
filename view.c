@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "main.h"
+#include "linkedlists.h"
 
 void printBoard() {
 

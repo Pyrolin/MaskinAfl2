@@ -1,9 +1,8 @@
 #include <stdio.h>
 #include <string.h>
-#include "main.h"
 #include "command.h"
 #include "view.h"
-
+#include "linkedlists.h"
 
 int isRunning;
 char PHASE[] = "STARTUP";

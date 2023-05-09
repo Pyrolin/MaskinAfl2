@@ -1,6 +1,5 @@
 #include "delete.h"
 #include "split.h"
-#include "main.h"
 #include "addToDeck.h"
 
 void dealCards() {

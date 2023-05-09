@@ -2,7 +2,6 @@
 #include <string.h>
 #include "play.h"
 #include "load.h"
-#include "main.h"
 
 void startPhase(char input[]) {
     if(strcmp(input, "LD") == 0) {
