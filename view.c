@@ -2,6 +2,9 @@
 #include <string.h>
 #include "linkedlists.h"
 
+/**
+ * Prints the entire game board
+ */
 void printBoard() {
 
     int hasCards = 1;

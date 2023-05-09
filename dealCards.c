@@ -2,6 +2,9 @@
 #include "split.h"
 #include "addToDeck.h"
 
+/**
+ * Deals the cards out in the 7 columns, from the loaded deck
+ */
 void dealCards() {
     extern Card* deck;
     extern Card* C1;

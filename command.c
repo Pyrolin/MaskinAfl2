@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include <string.h>
 #include "play.h"
 #include "load.h"
@@ -7,6 +6,10 @@
 #include "restart.h"
 #include "split.h"
 
+/**
+ * Handles commands in the STARTUP phase
+ * @param input the command that should be executed
+ */
 void startPhase(char input[]) {
     if(strcmp(input, "LD") == 0) {
         load();
@@ -23,7 +26,10 @@ void startPhase(char input[]) {
 }
 
 
-
+/**
+ * Handles commands in the PLAY phase
+ * @param input the command that should be executed
+ */
 void playPhase(char input[]) {
     if (strcmp(input, "Q") == 0){
         quitGame();

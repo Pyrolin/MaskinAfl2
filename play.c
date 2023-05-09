@@ -1,6 +1,9 @@
 #include "dealCards.h"
 #include "string.h"
 
+/**
+ * Sets the phase to PLAY
+ */
 void Play() {
     extern char PHASE[];
     extern char message[];

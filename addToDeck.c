@@ -3,7 +3,7 @@
 /**
  * Adds a card to the deck
  * @param newCard The card that should be added to the deck
- * @param card The current last card in the deck, NULL if none
+ * @param card The current last card in the deck, NULL or dummy card if none
  */
 Card* AddToDeck(Card *newCard, Card *card) {
     Card *dummy = NULL;

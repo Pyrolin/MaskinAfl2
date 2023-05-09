@@ -1,6 +1,8 @@
-#include <stdlib.h>
 #include <string.h>
 
+ /**
+  * Returns from PLAY phase to STARTUP phase
+  */
  void quitGame(){
 
     extern char PHASE[];

@@ -5,6 +5,11 @@
 #include "delete.h"
 #define MAX_CARDS 52
 
+/**
+ * Shuffles a deck
+ * @param card1 The card that should be shuffled
+ * @param card2 The card that should be shuffled
+ */
 void shuffleDeck(Card *card1, Card *card2) {
 Card *lastNode = card1;
 while (lastNode->next != NULL) {
@@ -28,6 +33,11 @@ int length = 0;
         }
 }
 
+/**
+ * Splits and shuffles a deck
+ * @param card The start card from the deck that should be split and shuffled
+ * @param split Where the deck should be split
+ */
 void splitAndShuffleDeck(Card *card, int split) {
     Card *deck1 = NULL;
     Card *deck2 = NULL;
@@ -55,7 +65,10 @@ void splitAndShuffleDeck(Card *card, int split) {
 }
 
 
-
+/**
+ * Splits the main deck in two
+ * @param split Where the deck should be split
+ */
 void splitDeck(int split) {
 // list points to the head of a linked list of Flights
     int count = 1;

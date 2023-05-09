@@ -3,6 +3,12 @@
 #include "delete.h"
 #include "addToDeck.h"
 
+/**
+ * Moves a card from one column/foundation to another
+ * @param card1 The card that should be moved from
+ * @param card2 The card that should be moved to
+ * @return the card that was moved
+ */
 Card *moveFromTo(Card *card1, Card *card2) {
     Card *nextCard = card1->next;
     DeleteList(card1);
@@ -23,6 +29,12 @@ Card *moveFromTo(Card *card1, Card *card2) {
     return card;
 
 }
+
+/**
+ * Gets the previous value of a card value (kinda like value -1)
+ * @param value The start value
+ * @return The value one bellow the start value
+ */
 char getPrevValue(char value){
     switch (value) {
         case 'K':{
@@ -70,6 +82,11 @@ char getPrevValue(char value){
     }
 }
 
+/**
+ * Gets the next value of a card value (kinda like value +1)
+ * @param value The start value
+ * @return The value one above the start value
+ */
 char getNextValue(char value) {
     switch (value) {
         case 'A': {
@@ -117,6 +134,11 @@ char getNextValue(char value) {
     }
 }
 
+/**
+ * Determines where a card should be moved to and if its possible
+ * @param card The card that should be moved
+ * @param destColumn The column the card should be moved to
+ */
 void moveToDst(Card *card, char destColumn[]) {
 
     extern Card* C1;
@@ -294,6 +316,10 @@ void moveToDst(Card *card, char destColumn[]) {
 
 }
 
+/**
+ * Determines what card should be moved
+ * @param command The move command, with the column that the card should be moved from
+ */
 void moveCards(char command[]) {
 
     extern Card* C1;

@@ -3,6 +3,9 @@
 #include "linkedlists.h"
 #include "addToDeck.h"
 
+/**
+ * This function loads the cards in from a text file and creates a linked list
+ */
 void load() {
     FILE *fh;
     char line[4];
