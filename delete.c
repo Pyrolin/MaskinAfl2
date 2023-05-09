@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include "linkedlists.h"
 
 void DeleteList(Card* temp)
