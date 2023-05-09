@@ -3,12 +3,13 @@
 #include "delete.h"
 #include "addToDeck.h"
 
-void moveFromTo(Card *card1, Card *card2) {
+Card *moveFromTo(Card *card1, Card *card2) {
     Card *nextCard = card1->next;
     DeleteList(card1);
+    Card* card = NULL;
 
     while (card1->suit != 'X') {
-        AddToDeck(card1, card2);
+        card = AddToDeck(card1, card2);
         card2 = card1;
         card1 = nextCard;
         if (card1->suit == 'X') {
@@ -17,6 +18,8 @@ void moveFromTo(Card *card1, Card *card2) {
         DeleteList(card1);
         nextCard = card1->next;
     }
+
+    return card;
 
 }
 char getPrevValue(char value){
@@ -136,7 +139,11 @@ void moveToDst(Card *card, char destColumn[]) {
         Card* lastCard = C1->previous->previous;
 
         if (getNextValue(card->value) == lastCard->value) {
-            moveFromTo(card, lastCard);
+            if (lastCard->value == 'X') {
+                C1 = moveFromTo(card, lastCard);
+            } else {
+                moveFromTo(card, lastCard);
+            }
         }
 
     } else if(destColumn[0] == 'c' && destColumn[1] == '2'){
@@ -144,48 +151,66 @@ void moveToDst(Card *card, char destColumn[]) {
         Card* lastCard = C2->previous->previous;
 
         if (getNextValue(card->value) == lastCard->value) {
-            moveFromTo(card, lastCard);
-        }
+            if (lastCard->value == 'X') {
+                C2 = moveFromTo(card, lastCard);
+            } else {
+                moveFromTo(card, lastCard);
+            }        }
 
     } else if(destColumn[0] == 'c' && destColumn[1] == '3'){
 
         Card* lastCard = C3->previous->previous;
 
         if (getNextValue(card->value) == lastCard->value) {
-            moveFromTo(card, lastCard);
-        }
+            if (lastCard->value == 'X') {
+                C3 = moveFromTo(card, lastCard);
+            } else {
+                moveFromTo(card, lastCard);
+            }        }
 
     } else if(destColumn[0] == 'c' && destColumn[1] == '4'){
 
         Card* lastCard = C4->previous->previous;
 
         if (getNextValue(card->value) == lastCard->value) {
-            moveFromTo(card, lastCard);
-        }
+            if (lastCard->value == 'X') {
+                C4 = moveFromTo(card, lastCard);
+            } else {
+                moveFromTo(card, lastCard);
+            }        }
 
     } else if(destColumn[0] == 'c' && destColumn[1] == '5'){
 
         Card* lastCard = C5->previous->previous;
 
         if (getNextValue(card->value) == lastCard->value) {
-            moveFromTo(card, lastCard);
-        }
+            if (lastCard->value == 'X') {
+                C5 = moveFromTo(card, lastCard);
+            } else {
+                moveFromTo(card, lastCard);
+            }        }
 
     } else if(destColumn[0] == 'c' && destColumn[1] == '6'){
 
         Card* lastCard = C6->previous->previous;
 
         if (getNextValue(card->value) == lastCard->value) {
-            moveFromTo(card, lastCard);
-        }
+            if (lastCard->value == 'X') {
+                C6 = moveFromTo(card, lastCard);
+            } else {
+                moveFromTo(card, lastCard);
+            }        }
 
     } else if(destColumn[0] == 'c' && destColumn[1] == '7'){
 
         Card* lastCard = C7->previous->previous;
 
         if (getNextValue(card->value) == lastCard->value) {
-            moveFromTo(card, lastCard);
-        }
+            if (lastCard->value == 'X') {
+                C7 = moveFromTo(card, lastCard);
+            } else {
+                moveFromTo(card, lastCard);
+            }        }
 
     }
 
@@ -195,29 +220,41 @@ void moveToDst(Card *card, char destColumn[]) {
         Card* lastCard = F1->previous->previous;
 
         if (getPrevValue(card->value) == lastCard->value) {
-            moveFromTo(card, lastCard);
-        }
+            if (lastCard->value == 'X') {
+                F1 = moveFromTo(card, lastCard);
+            } else {
+                moveFromTo(card, lastCard);
+            }        }
     } else if(destColumn[0] == 'f' && destColumn[1] == '2'){
 
         Card* lastCard = F2->previous->previous;
 
         if (getPrevValue(card->value) == lastCard->value) {
-            moveFromTo(card, lastCard);
-        }
+            if (lastCard->value == 'X') {
+                F2 = moveFromTo(card, lastCard);
+            } else {
+                moveFromTo(card, lastCard);
+            }        }
     } else if(destColumn[0] == 'f' && destColumn[1] == '3'){
 
         Card* lastCard = F3->previous->previous;
 
         if (getPrevValue(card->value) == lastCard->value) {
-            moveFromTo(card, lastCard);
-        }
+            if (lastCard->value == 'X') {
+                F3 = moveFromTo(card, lastCard);
+            } else {
+                moveFromTo(card, lastCard);
+            }        }
     } else if(destColumn[0] == 'f' && destColumn[1] == '4'){
 
         Card* lastCard = F4->previous->previous;
 
         if (getPrevValue(card->value) == lastCard->value) {
-            moveFromTo(card, lastCard);
-        }
+            if (lastCard->value == 'X') {
+                F4 = moveFromTo(card, lastCard);
+            } else {
+                moveFromTo(card, lastCard);
+            }        }
     }
 
 
@@ -272,6 +309,9 @@ void moveCards(char command[]) {
             strcpy(message,"This move is not valid");
 
         } else {
+            if (current->next->suit == 'X' && current->previous->suit == 'X') {
+                C1 = current->next;
+            }
             moveToDst(current, destColumn);
         }
 
@@ -301,6 +341,9 @@ void moveCards(char command[]) {
             strcpy(message,"This move is not valid");
 
         } else {
+            if (current->next->suit == 'X' && current->previous->suit == 'X') {
+                C2 = current->next;
+            }
             moveToDst(current, destColumn);
         }
 
@@ -330,6 +373,9 @@ void moveCards(char command[]) {
             strcpy(message,"This move is not valid");
 
         } else {
+            if (current->next->suit == 'X' && current->previous->suit == 'X') {
+                C3 = current->next;
+            }
             moveToDst(current, destColumn);
         }
 
@@ -359,6 +405,9 @@ void moveCards(char command[]) {
             strcpy(message,"This move is not valid");
 
         } else {
+            if (current->next->suit == 'X' && current->previous->suit == 'X') {
+                C4 = current->next;
+            }
             moveToDst(current, destColumn);
         }
 
@@ -388,6 +437,9 @@ void moveCards(char command[]) {
             strcpy(message,"This move is not valid");
 
         } else {
+            if (current->next->suit == 'X' && current->previous->suit == 'X') {
+                C5 = current->next;
+            }
             moveToDst(current, destColumn);
         }
 
@@ -417,6 +469,9 @@ void moveCards(char command[]) {
             strcpy(message,"This move is not valid");
 
         } else {
+            if (current->next->suit == 'X' && current->previous->suit == 'X') {
+                C6 = current->next;
+            }
             moveToDst(current, destColumn);
         }
 
@@ -446,6 +501,9 @@ void moveCards(char command[]) {
             strcpy(message,"This move is not valid");
 
         } else {
+            if (current->next->suit == 'X' && current->previous->suit == 'X') {
+                C7 = current->next;
+            }
             moveToDst(current, destColumn);
         }
 
@@ -475,6 +533,9 @@ void moveCards(char command[]) {
             strcpy(message,"This move is not valid");
 
         } else {
+            if (current->next->suit == 'X' && current->previous->suit == 'X') {
+                F1 = current->next;
+            }
             moveToDst(current, destColumn);
         }
 
@@ -504,6 +565,9 @@ void moveCards(char command[]) {
             strcpy(message,"This move is not valid");
 
         } else {
+            if (current->next->suit == 'X' && current->previous->suit == 'X') {
+                F2 = current->next;
+            }
             moveToDst(current, destColumn);
         }
 
@@ -533,6 +597,9 @@ void moveCards(char command[]) {
             strcpy(message,"This move is not valid");
 
         } else {
+            if (current->next->suit == 'X' && current->previous->suit == 'X') {
+                F3 = current->next;
+            }
             moveToDst(current, destColumn);
         }
 
@@ -562,6 +629,9 @@ void moveCards(char command[]) {
             strcpy(message,"This move is not valid");
 
         } else {
+            if (current->next->suit == 'X' && current->previous->suit == 'X') {
+                F4 = current->next;
+            }
             moveToDst(current, destColumn);
         }
 
