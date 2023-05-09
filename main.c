@@ -6,7 +6,7 @@
 
 int isRunning;
 char PHASE[] = "STARTUP";
-char lastCommand[6] = "";
+char lastCommand[12] = "";
 char message[225];
 int isLoaded = 0;
 
