@@ -1,39 +1,89 @@
 #include <string.h>
 #include "linkedlists.h"
+#include "delete.h"
+#include "addToDeck.h"
 
-void moveToDst(Card *card, char command[]) {
+void moveFromTo(Card *card1, Card *card2) {
+    Card *nextCard = card1->next;
+    DeleteList(card1);
 
-    if(strcmp(srcColoumn,"c1")){
+    while (card1->suit != 'X') {
+        AddToDeck(card1, card2);
+        card1 = nextCard;
+        nextCard = card1->next;
+    }
+
+}
+
+char getNextValue(char value) {
+    switch (value) {
+        case 'a': {
+            return '2';
+        }
+        case '2': {
+            return '3';
+        }
+        default: {
+            return 'X';
+        }
+    }
+}
+
+void moveToDst(Card *card, char destColumn[]) {
+
+    extern Card* C1;
+    extern Card* C2;
+    extern Card* C3;
+    extern Card* C4;
+    extern Card* C5;
+    extern Card* C6;
+    extern Card* C7;
+
+    extern Card* F1;
+    extern Card* F2;
+    extern Card* F3;
+    extern Card* F4;
+
+
+    extern char message[];
+
+    if(destColumn[0] == 'c' && destColumn[1] == '1'){
+
+        Card* lastCard = C1->previous->previous;
+
+        if (getNextValue(card->value) == lastCard->value) {
+            moveFromTo(card, lastCard);
+        }
 
     }
-    if(strcmp(srcColoumn,"c2")){
+    if(strcmp(destColumn,"c2")){
 
     }
-    if(strcmp(srcColoumn,"c3")){
+    if(strcmp(destColumn,"c3")){
 
     }
-    if(strcmp(srcColoumn,"c4")){
+    if(strcmp(destColumn,"c4")){
 
     }
-    if(strcmp(srcColoumn,"c5")){
+    if(strcmp(destColumn,"c5")){
 
     }
-    if(strcmp(srcColoumn,"c6")){
+    if(strcmp(destColumn,"c6")){
 
     }
-    if(strcmp(srcColoumn,"c7")){
+    if(strcmp(destColumn,"c7")){
 
     }
-    if(strcmp(srcColoumn,"f1")){
+    if(strcmp(destColumn,"f1")){
 
     }
-    if(strcmp(srcColoumn,"f2")){
+    if(strcmp(destColumn,"f2")){
 
     }
-    if(strcmp(srcColoumn,"f3")){
+    if(strcmp(destColumn,"f3")){
 
     }
-    if(strcmp(srcColoumn,"f4")){
+    if(strcmp(destColumn,"f4")){
 
     }
 
