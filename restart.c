@@ -1,12 +1,13 @@
 #include <stdlib.h>
+#include <string.h>
+#include "Main.h"
 
  void quitGame(char* deck){
 
      free(deck);
 
      // return to startup phase.
-     startup();
-
+     strcpy(PHASE,"STARTUP");
 }
 
  void playGame(){
