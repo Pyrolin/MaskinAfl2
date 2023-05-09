@@ -1,15 +1,17 @@
 #include<stdio.h>
 #include<conio.h>
-#include "linkedlists.c"
+#include <string.h>
+#include "linkedlists.h"
 #include "main.h"
-#include "dealCards.c"
-#include "view.c"
+#include "addToDeck.h"
 
-int load()
-{
+void load() {
     FILE *fh;
     char line[4];
     fh = fopen("..\\kort.txt", "r");
+    extern Card* deck;
+    extern int isLoaded;
+    extern char message[];
     if (fh != NULL)
     {
         //Card *firstCard = NULL;
@@ -30,12 +32,9 @@ int load()
         }
 
         fclose(fh);
-        dealCards();
-        printBoard("test");
-        //Printdeck(firstCard);
+        strcpy(message, "OK");
+        isLoaded = 1;
     }
     else printf("Error opening file\n");
-
-    return 0;
 }
 
