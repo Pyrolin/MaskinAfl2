@@ -122,6 +122,35 @@ void printBoard() {
 
     }
 
+    if (C1) {
+        C1 = C1->next;
+
+    }
+    if (C2) {
+        C2 = C2->next;
+
+    }
+    if (C3) {
+        C3 = C3->next;
+
+    }
+    if (C4) {
+        C4 = C4->next;
+
+    }
+    if (C5) {
+        C5 = C5->next;
+
+    }
+    if (C6) {
+        C6 = C6->next;
+
+    }
+    if (C7) {
+        C7 = C7->next;
+
+    }
+
     printf("\nLAST Command: %s\n", lastCommand);
     printf("Message: %s\n", message);
     printf("INPUT >");
