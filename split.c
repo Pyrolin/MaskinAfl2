@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include "linkedlists.h"
 #include "addToDeck.h"
+#include "delete.h"
 #define MAX_CARDS 52
 
 void shuffleDeck(Card *card1, Card *card2) {
@@ -55,26 +56,70 @@ void splitAndShuffleDeck(Card *card, int split) {
 
 
 
-void splitDeck(Card *card, int split) {
+void splitDeck(int split) {
 // list points to the head of a linked list of Flights
     int count = 1;
+    extern Card* deck;
+
+    Card* card = deck;
 
     Card *dummy1 = CreateCard('X','X');
     Card *dummy2 = CreateCard('X','X');
 
-    Card *deck1 = dummy1;
-    Card *deck2 = dummy2;
+    Card *deck1 = NULL;
+    Card *deck2 = NULL;
 
+    deck1 = AddToDeck(dummy1, deck1);
+    deck2 = AddToDeck(dummy2, deck2);
+
+    Card *temp = NULL;
     while (card->suit != 'X') { // while not at the end
         if (count < split) {
+            temp = card->next;
+            DeleteList(card);
             deck1 = AddToDeck(card, deck1);
+            card = temp;
         } else {
+            temp = card->next;
+            DeleteList(card);
             deck2 = AddToDeck(card, deck2);
+            card = temp;
         }
 
         count = count + 1;
-        card = card->next; // move to next node
+        //card = card->next; // move to next node
     }
+
+    deck1 = deck1->next->next;
+    deck2 = deck2->next->next;
+
+    Card* next1 = NULL;
+    Card* next2 = NULL;
+
+    while(1) {
+        if (deck1->next->suit != 'X') {
+            next1 = deck1->next;
+            DeleteList(deck1);
+            deck = AddToDeck(deck1, deck);
+            deck1 = next1;
+        }
+        if (deck2->next->suit != 'X') {
+            next2 = deck2->next;
+            DeleteList(deck2);
+            deck = AddToDeck(deck2, deck);
+            deck2 = next2;
+        }
+
+        if (deck1->next->suit == 'X' && deck2->next->suit == 'X') {
+            DeleteList(deck1);
+            deck = AddToDeck(deck1, deck);
+            DeleteList(deck2);
+            deck = AddToDeck(deck2, deck);
+            break;
+        }
+    }
+
+    deck = deck->next->next;
 
 
 }
