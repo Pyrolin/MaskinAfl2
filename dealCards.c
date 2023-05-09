@@ -12,6 +12,12 @@ void dealCards() {
     extern Card* C6;
     extern Card* C7;
 
+    extern Card* F1;
+    extern Card* F2;
+    extern Card* F3;
+    extern Card* F4;
+
+
     Card *prev = deck->previous->previous;
     DeleteList(prev);
     C1 = AddToDeck(prev, NULL);
@@ -75,5 +81,17 @@ void dealCards() {
         DeleteList(prev);
         C7Next = AddToDeck(prev, C7Next);
     }
+
+    Card *dummy1 = CreateCard('X', 'X');
+    F1 = AddToDeck(dummy1, NULL);
+
+    Card *dummy2 = CreateCard('X', 'X');
+    F2 = AddToDeck(dummy2, NULL);
+
+    Card *dummy3 = CreateCard('X', 'X');
+    F3 = AddToDeck(dummy3, NULL);
+
+    Card *dummy4 = CreateCard('X', 'X');
+    F4 = AddToDeck(dummy4, NULL);
 
 }
