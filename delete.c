@@ -1,7 +1,15 @@
 #include "linkedlists.h"
 
-void DeleteList(Card* temp)
+Card* DeleteList(Card* temp)
 {
-    temp->previous->next = temp->next;
-    temp->next->previous = temp->previous;
+    if (temp->next->value == 'X' && temp->previous->value == 'X') {
+        temp->previous->previous = temp->next;
+        temp->next->next = temp->previous;
+    } else {
+        temp->previous->next = temp->next;
+        temp->next->previous = temp->previous;
+    }
+
+    return temp;
+
 }
