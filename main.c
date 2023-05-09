@@ -1,8 +1,30 @@
 #include <stdio.h>
 #include <string.h>
-#include <malloc.h>
 #include "main.h"
-#include "load.c"
+#include "command.h"
+#include "printview.h"
+
+
+int isRunning;
+char PHASE[] = "STARTUP";
+char lastCommand[6] = "";
+char message[225];
+int isLoaded = 0;
+
+Card *deck;
+
+Card *C1;
+Card *C2;
+Card *C3;
+Card *C4;
+Card *C5;
+Card *C6;
+Card *C7;
+
+Card *F1;
+Card *F2;
+Card *F3;
+Card *F4;
 
 /* How we could implement a linked list
 typedef struct deckType Deck;
@@ -29,39 +51,35 @@ Deck * CreateDeck(char value, char suit) {
 
 
 int main(int argc, char *argv[]) {
-    load();
-    /* Temp commented for testing
     isRunning = 1; // True/False
 
-    createBoard(); //Not implemented yet, should render the initial empty board
+    strcpy(message, "OK");
+    printBoard();
 
     while(isRunning) {
         if (strcmp(PHASE, "PLAY") == 0) {
-            char input[6]; //Max input length can be 6 chars long (should maybe handle if the user inputs something longer)
+            fgets(lastCommand, sizeof(lastCommand), stdin);
 
-            fgets(input, sizeof(input), stdin);
+            lastCommand[strcspn(lastCommand, "\n")] = '\0';
 
-            char** response = executePlayCommand(input); //Not implemented yet
+            playPhase(lastCommand); //Not implemented yet
             // response would be an array of strings,
             // response[0] would be either "ERROR" or "SUCCESS"
             // and response[1] would be the message that should be displayed
 
-            printBoard(response[0], response[1]); //Not implemented yet
+            printBoard(); //Not implemented yet
 
         } else if (strcmp(PHASE, "STARTUP") == 0) {
-            char input[2]; //Max input length can be 2 chars long (should maybe handle if the user inputs something longer)
-
-            fgets(input, sizeof(input), stdin);
+            fgets(lastCommand, sizeof(lastCommand), stdin);
+            lastCommand[strcspn(lastCommand, "\n")] = '\0';
 
             // We should maybe split input up here into two variables, one for the commands and one for the arguments (filename, split etc.)
-            char** response = executeStartupCommand(input); //Not implemented yet
+            startPhase(lastCommand); //Not implemented yet
             // response would be an array of strings,
             // response[0] would be either "ERROR" or "SUCCES"
             // and response[1] would be the message that should be displayed
 
-            printBoard(response[0], response[1]); //Not implemented yet
+            printBoard(); //Not implemented yet
         }
     }
-    */
-
 }
