@@ -1,10 +1,25 @@
-#include "linkedlists.h"
 #include <stdio.h>
 #include "main.h"
 
-void printBoard(char message[]) {
+void printBoard() {
 
     int hasCards = 1;
+
+    extern Card* C1;
+    extern Card* C2;
+    extern Card* C3;
+    extern Card* C4;
+    extern Card* C5;
+    extern Card* C6;
+    extern Card* C7;
+
+    extern Card* F1;
+    extern Card* F2;
+    extern Card* F3;
+    extern Card* F4;
+
+    extern char lastCommand[];
+    extern char message[];
 
     int C1_Cards = (C1) ? 1 : 0;
     int C2_Cards = (C2) ? 1 : 0;
@@ -109,5 +124,5 @@ void printBoard(char message[]) {
 
     printf("\nLAST Command: %s\n", lastCommand);
     printf("Message: %s\n", message);
-    printf("INPUT > \n");
+    printf("INPUT >");
 }
