@@ -3,6 +3,7 @@
 
 
 void moveToDst(Card *card, char command[]) {
+    /*
     if(strcmp(srcColoumn,"c1")){
 
     }
@@ -36,9 +37,19 @@ void moveToDst(Card *card, char command[]) {
     if(strcmp(srcColoumn,"f4")){
 
     }
+     */
 }
 
 void moveCards(char command[]) {
+
+    extern Card* C1;
+    extern Card* C2;
+    extern Card* C3;
+    extern Card* C4;
+    extern Card* C5;
+    extern Card* C6;
+    extern Card* C7;
+
     char srcCard[2];
     char destColumn[2];
     char srcColoumn[2];
