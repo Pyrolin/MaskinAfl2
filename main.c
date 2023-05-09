@@ -2,7 +2,7 @@
 #include <string.h>
 #include "main.h"
 #include "command.h"
-#include "printview.h"
+#include "view.h"
 
 
 int isRunning;
