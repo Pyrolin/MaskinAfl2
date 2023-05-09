@@ -8,7 +8,11 @@
 Card* AddToDeck(Card *newCard, Card *card) {
     Card *dummy = NULL;
 
-    if (card != NULL) {
+    if (card && card->suit == 'X') {
+        dummy = card;
+        dummy->next = newCard;
+        newCard->previous = dummy;
+    } else if (card != NULL) {
         dummy = card->next;
         card->next = newCard;
         newCard->previous = card;
