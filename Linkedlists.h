@@ -12,4 +12,6 @@ struct CardType {
     Card *previous;
 };
 
+Card* CreateCard(char value, char suit);
+
 #endif
