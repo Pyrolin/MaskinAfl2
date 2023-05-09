@@ -5,14 +5,13 @@
 #include "moveCards.h"
 #include "quit.h"
 #include "restart.h"
+#include "split.h"
 
 void startPhase(char input[]) {
     if(strcmp(input, "LD") == 0) {
         load();
     } else if(strcmp(input, "SD") == 0){
-        //splitDeck();
-    } else if(strcmp(input, "SH") == 0){
-        //shuffleDeck();
+        splitDeck(10);
     } else if(strcmp(input, "QQ") == 0){
         quit();
     } else if (strcmp(input, "P") == 0) {
