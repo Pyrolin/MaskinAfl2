@@ -32,10 +32,11 @@ void printBoard() {
     int F_Cards = 1;
     int F_insert = 1;
 
-
+    setbuf(stdout, 0);
     printf("C1    C2    C3    C4    C5    C6    C7 \n\n");
 
     while (hasCards) {
+        setbuf(stdout, 0);
         if (C1 && C1->suit != 'X') {
             printf("%c%c    ", C1->value, C1->suit);
             C1 = C1->next;
@@ -43,7 +44,7 @@ void printBoard() {
             C1_Cards = 0;
             printf("      ");
         }
-
+        setbuf(stdout, 0);
         if (C2 && C2->suit != 'X') {
             printf("%c%c    ", C2->value, C2->suit);
             C2 = C2->next;
@@ -51,7 +52,7 @@ void printBoard() {
             C2_Cards = 0;
             printf("      ");
         }
-
+        setbuf(stdout, 0);
         if (C3 && C3->suit != 'X') {
             printf("%c%c    ", C3->value, C3->suit);
             C3 = C3->next;
@@ -59,7 +60,7 @@ void printBoard() {
             C3_Cards = 0;
             printf("      ");
         }
-
+        setbuf(stdout, 0);
         if (C4 && C4->suit != 'X') {
             printf("%c%c    ", C4->value, C4->suit);
             C4 = C4->next;
@@ -67,7 +68,7 @@ void printBoard() {
             C4_Cards = 0;
             printf("      ");
         }
-
+        setbuf(stdout, 0);
         if (C5 && C5->suit != 'X') {
             printf("%c%c    ", C5->value, C5->suit);
             C5 = C5->next;
@@ -75,7 +76,7 @@ void printBoard() {
             C5_Cards = 0;
             printf("      ");
         }
-
+        setbuf(stdout, 0);
         if (C6 && C6->suit != 'X') {
             printf("%c%c    ", C6->value, C6->suit);
             C6 = C6->next;
@@ -83,7 +84,7 @@ void printBoard() {
             C6_Cards = 0;
             printf("      ");
         }
-
+        setbuf(stdout, 0);
         if (C7 && C7->suit != 'X') {
             printf("%c%c    ", C7->value, C7->suit);
             C7 = C7->next;
@@ -95,14 +96,14 @@ void printBoard() {
         if (F_insert) {
             char showCard[3];
 
-
-            if (F_Cards == 1 && F1) {
+            setbuf(stdout, 0);
+            if (F_Cards == 1 && F1 && F1->suit != 'X') {
                 printf("%c%c  F%d", F1->previous->previous->value, F1->previous->previous->suit, F_Cards);
-            } else if (F_Cards == 2 && F2) {
+            } else if (F_Cards == 2 && F2 && F2->suit != 'X') {
                 printf("%c%c  F%d", F2->previous->previous->value, F2->previous->previous->suit, F_Cards);
-            } else if (F_Cards == 3 && F3) {
+            } else if (F_Cards == 3 && F3 && F3->suit != 'X') {
                 printf("%c%c  F%d", F3->previous->previous->value, F3->previous->previous->suit, F_Cards);
-            } else if (F_Cards == 4 && F4) {
+            } else if (F_Cards == 4 && F4 && F4->suit != 'X') {
                 printf("%c%c  F%d", F4->previous->previous->value, F4->previous->previous->suit, F_Cards);
             } else {
                 printf("[]  F%d", F_Cards);
@@ -150,8 +151,10 @@ void printBoard() {
         C7 = C7->next;
 
     }
-
+    setbuf(stdout, 0);
     printf("\nLAST Command: %s\n", lastCommand);
+    setbuf(stdout, 0);
     printf("Message: %s\n", message);
+    setbuf(stdout, 0);
     printf("INPUT >");
 }
