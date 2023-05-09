@@ -3,19 +3,18 @@
 #include "play.h"
 #include "load.h"
 #include "moveCards.h"
+#include "quit.h"
+#include "restart.h"
+
 void startPhase(char input[]) {
     if(strcmp(input, "LD") == 0) {
         load();
-    } else if(strcmp(input, "SC") == 0){
-        //showCards();
     } else if(strcmp(input, "SD") == 0){
         //splitDeck();
     } else if(strcmp(input, "SH") == 0){
         //shuffleDeck();
-    } else if(strcmp(input, "S") == 0){
-        //Save();
     } else if(strcmp(input, "QQ") == 0){
-        //quit();
+        quit();
     } else if (strcmp(input, "P") == 0) {
         Play();
     } else {
@@ -28,7 +27,7 @@ void startPhase(char input[]) {
 
 void playPhase(char input[]) {
     if (strcmp(input, "Q") == 0){
-        //do the return command
+        quitGame();
     } else {
         moveCards(input);
     }

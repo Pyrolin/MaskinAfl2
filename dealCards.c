@@ -17,6 +17,12 @@ void dealCards() {
     extern Card* F3;
     extern Card* F4;
 
+    extern int isDealt;
+
+    if (isDealt) {
+        return;
+    }
+
 
     Card *prev = deck->previous->previous;
     DeleteList(prev);
@@ -94,4 +100,5 @@ void dealCards() {
     Card *dummy4 = CreateCard('X', 'X');
     F4 = AddToDeck(dummy4, NULL);
 
+    isDealt = 1;
 }

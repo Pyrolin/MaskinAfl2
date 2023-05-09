@@ -1,23 +1,13 @@
 #include <stdlib.h>
 #include <string.h>
 
- void quitGame(char* card){
+ void quitGame(){
 
     extern char PHASE[];
-
-     free(card);
+    extern char message[];
 
      // return to startup phase.
      strcpy(PHASE,"STARTUP");
+     strcpy(message, "OK");
 
-}
-
- void playGame() {
-    // initialize the deck of cards
-     char* card = malloc(sizeof(char)* 52 );
-     // play the game using the deck of cards.
-
-
-     // if the player wants to quit the game and return to the startup phase.
-     quitGame(card);
-}
+ }

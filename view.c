@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 #include "linkedlists.h"
 
 void printBoard() {
@@ -20,6 +21,7 @@ void printBoard() {
 
     extern char lastCommand[];
     extern char message[];
+    extern char PHASE[];
 
     int C1_Cards = (C1) ? 1 : 0;
     int C2_Cards = (C2) ? 1 : 0;
@@ -35,7 +37,7 @@ void printBoard() {
     setbuf(stdout, 0);
     printf("C1    C2    C3    C4    C5    C6    C7 \n\n");
 
-    while (hasCards) {
+    while (hasCards && strcmp(PHASE, "PLAY") == 0) {
         setbuf(stdout, 0);
         if (C1 && C1->suit != 'X') {
             printf("%c%c    ", C1->value, C1->suit);

@@ -7,6 +7,7 @@ Card *moveFromTo(Card *card1, Card *card2) {
     Card *nextCard = card1->next;
     DeleteList(card1);
     Card* card = NULL;
+    extern char message[];
 
     while (card1->suit != 'X') {
         card = AddToDeck(card1, card2);
@@ -18,7 +19,7 @@ Card *moveFromTo(Card *card1, Card *card2) {
         DeleteList(card1);
         nextCard = card1->next;
     }
-
+    strcpy(message,"OK");
     return card;
 
 }
@@ -144,6 +145,8 @@ void moveToDst(Card *card, char destColumn[]) {
             } else {
                 moveFromTo(card, lastCard);
             }
+        } else {
+            strcpy(message,"This move is not valid");
         }
 
     } else if(destColumn[0] == 'c' && destColumn[1] == '2'){
@@ -155,7 +158,10 @@ void moveToDst(Card *card, char destColumn[]) {
                 C2 = moveFromTo(card, lastCard);
             } else {
                 moveFromTo(card, lastCard);
-            }        }
+            }
+        } else {
+            strcpy(message,"This move is not valid");
+        }
 
     } else if(destColumn[0] == 'c' && destColumn[1] == '3'){
 
@@ -166,7 +172,10 @@ void moveToDst(Card *card, char destColumn[]) {
                 C3 = moveFromTo(card, lastCard);
             } else {
                 moveFromTo(card, lastCard);
-            }        }
+            }
+        } else {
+            strcpy(message,"This move is not valid");
+        }
 
     } else if(destColumn[0] == 'c' && destColumn[1] == '4'){
 
@@ -177,7 +186,10 @@ void moveToDst(Card *card, char destColumn[]) {
                 C4 = moveFromTo(card, lastCard);
             } else {
                 moveFromTo(card, lastCard);
-            }        }
+            }
+        } else {
+            strcpy(message,"This move is not valid");
+        }
 
     } else if(destColumn[0] == 'c' && destColumn[1] == '5'){
 
@@ -188,7 +200,10 @@ void moveToDst(Card *card, char destColumn[]) {
                 C5 = moveFromTo(card, lastCard);
             } else {
                 moveFromTo(card, lastCard);
-            }        }
+            }
+        } else {
+            strcpy(message,"This move is not valid");
+        }
 
     } else if(destColumn[0] == 'c' && destColumn[1] == '6'){
 
@@ -199,7 +214,10 @@ void moveToDst(Card *card, char destColumn[]) {
                 C6 = moveFromTo(card, lastCard);
             } else {
                 moveFromTo(card, lastCard);
-            }        }
+            }
+        } else {
+            strcpy(message,"This move is not valid");
+        }
 
     } else if(destColumn[0] == 'c' && destColumn[1] == '7'){
 
@@ -210,7 +228,10 @@ void moveToDst(Card *card, char destColumn[]) {
                 C7 = moveFromTo(card, lastCard);
             } else {
                 moveFromTo(card, lastCard);
-            }        }
+            }
+        } else {
+            strcpy(message,"This move is not valid");
+        }
 
     }
 
@@ -224,7 +245,10 @@ void moveToDst(Card *card, char destColumn[]) {
                 F1 = moveFromTo(card, lastCard);
             } else {
                 moveFromTo(card, lastCard);
-            }        }
+            }
+        } else {
+            strcpy(message,"This move is not valid");
+        }
     } else if(destColumn[0] == 'f' && destColumn[1] == '2'){
 
         Card* lastCard = F2->previous->previous;
@@ -234,7 +258,10 @@ void moveToDst(Card *card, char destColumn[]) {
                 F2 = moveFromTo(card, lastCard);
             } else {
                 moveFromTo(card, lastCard);
-            }        }
+            }
+        } else {
+            strcpy(message,"This move is not valid");
+        }
     } else if(destColumn[0] == 'f' && destColumn[1] == '3'){
 
         Card* lastCard = F3->previous->previous;
@@ -244,7 +271,10 @@ void moveToDst(Card *card, char destColumn[]) {
                 F3 = moveFromTo(card, lastCard);
             } else {
                 moveFromTo(card, lastCard);
-            }        }
+            }
+        } else {
+            strcpy(message,"This move is not valid");
+        }
     } else if(destColumn[0] == 'f' && destColumn[1] == '4'){
 
         Card* lastCard = F4->previous->previous;
@@ -254,9 +284,13 @@ void moveToDst(Card *card, char destColumn[]) {
                 F4 = moveFromTo(card, lastCard);
             } else {
                 moveFromTo(card, lastCard);
-            }        }
+            }
+        } else {
+            strcpy(message,"This move is not valid");
+        }
+    } else {
+        strcpy(message,"This move is not valid");
     }
-
 
 }
 
@@ -316,8 +350,7 @@ void moveCards(char command[]) {
         }
 
 
-    }
-    if(srcColoumn[0] == 'c' && srcColoumn[1] == '2'){
+    } else if(srcColoumn[0] == 'c' && srcColoumn[1] == '2'){
         char value = srcCard[0];
         char suit = srcCard[1];
 
@@ -348,8 +381,7 @@ void moveCards(char command[]) {
         }
 
 
-    }
-    if(srcColoumn[0] == 'c' && srcColoumn[1] == '3'){
+    } else if(srcColoumn[0] == 'c' && srcColoumn[1] == '3'){
         char value = srcCard[0];
         char suit = srcCard[1];
 
@@ -380,8 +412,7 @@ void moveCards(char command[]) {
         }
 
 
-    }
-    if(srcColoumn[0] == 'c' && srcColoumn[1] == '4'){
+    } else if(srcColoumn[0] == 'c' && srcColoumn[1] == '4'){
         char value = srcCard[0];
         char suit = srcCard[1];
 
@@ -412,8 +443,7 @@ void moveCards(char command[]) {
         }
 
 
-    }
-    if(srcColoumn[0] == 'c' && srcColoumn[1] == '5'){
+    } else if(srcColoumn[0] == 'c' && srcColoumn[1] == '5'){
         char value = srcCard[0];
         char suit = srcCard[1];
 
@@ -444,8 +474,7 @@ void moveCards(char command[]) {
         }
 
 
-    }
-    if(srcColoumn[0] == 'c' && srcColoumn[1] == '6'){
+    } else if(srcColoumn[0] == 'c' && srcColoumn[1] == '6'){
         char value = srcCard[0];
         char suit = srcCard[1];
 
@@ -476,8 +505,7 @@ void moveCards(char command[]) {
         }
 
 
-    }
-    if(srcColoumn[0] == 'c' && srcColoumn[1] == '7'){
+    } else if(srcColoumn[0] == 'c' && srcColoumn[1] == '7'){
         char value = srcCard[0];
         char suit = srcCard[1];
 
@@ -508,8 +536,7 @@ void moveCards(char command[]) {
         }
 
 
-    }
-    if(srcColoumn[0] == 'f' && srcColoumn[1] == '1'){
+    } else if(srcColoumn[0] == 'f' && srcColoumn[1] == '1'){
         char value = srcCard[0];
         char suit = srcCard[1];
 
@@ -540,8 +567,7 @@ void moveCards(char command[]) {
         }
 
 
-    }
-    if(srcColoumn[0] == 'f' && srcColoumn[1] == '2'){
+    } else if(srcColoumn[0] == 'f' && srcColoumn[1] == '2'){
         char value = srcCard[0];
         char suit = srcCard[1];
 
@@ -572,8 +598,7 @@ void moveCards(char command[]) {
         }
 
 
-    }
-    if(srcColoumn[0] == 'f' && srcColoumn[1] == '3'){
+    } else if(srcColoumn[0] == 'f' && srcColoumn[1] == '3'){
         char value = srcCard[0];
         char suit = srcCard[1];
 
@@ -604,8 +629,7 @@ void moveCards(char command[]) {
         }
 
 
-    }
-    if(srcColoumn[0] == 'f' && srcColoumn[1] == '4'){
+    } else if(srcColoumn[0] == 'f' && srcColoumn[1] == '4'){
         char value = srcCard[0];
         char suit = srcCard[1];
 
@@ -634,7 +658,7 @@ void moveCards(char command[]) {
             }
             moveToDst(current, destColumn);
         }
-
-
+    } else {
+        strcpy(message,"This move is not valid");
     }
 }

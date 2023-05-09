@@ -11,8 +11,7 @@ void load() {
     extern Card* deck;
     extern int isLoaded;
     extern char message[];
-    if (fh != NULL)
-    {
+    if (fh != NULL && !isLoaded) {
         //Card *firstCard = NULL;
         Card *prevCard = NULL;
 
@@ -32,8 +31,11 @@ void load() {
 
         fclose(fh);
         strcpy(message, "OK");
-        isLoaded = 1;
+    } else {
+        strcpy(message, "Error opening file");
     }
-    else printf("Error opening file\n");
+
+    isLoaded = 1;
+
 }
 

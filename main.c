@@ -9,6 +9,7 @@ char PHASE[] = "STARTUP";
 char lastCommand[12] = "";
 char message[225];
 int isLoaded = 0;
+int isDealt = 0;
 
 Card *deck;
 
@@ -24,30 +25,6 @@ Card *F1;
 Card *F2;
 Card *F3;
 Card *F4;
-
-/* How we could implement a linked list
-typedef struct deckType Deck;
-struct deckType {
-    char value;
-    char suit;
-    Deck *next;
-};
-
-Deck *list = NULL;
-
-Deck * CreateDeck(char value, char suit) {
-    Deck *newDeck;
-// allocate a new node
-    newDeck = (Deck*)malloc(sizeof(Deck));
-// initialize node data
-    newDeck->value = value;
-    newDeck->suit = suit;
-// initialize pointer
-    newDeck->next = NULL;
-    return newDeck;
-}
-*/
-
 
 int main(int argc, char *argv[]) {
     isRunning = 1; // True/False
@@ -67,6 +44,11 @@ int main(int argc, char *argv[]) {
             // and response[1] would be the message that should be displayed
 
             printBoard(); //Not implemented yet
+
+            if (F1->previous->previous->value == 'K' && F2->previous->previous->value == 'K' && F3->previous->previous->value == 'K' && F4->previous->previous->value == 'K') {
+                printf("\n\n Congrats, you won the game!");
+                isRunning = 0;
+            }
 
         } else if (strcmp(PHASE, "STARTUP") == 0) {
             fgets(lastCommand, sizeof(lastCommand), stdin);

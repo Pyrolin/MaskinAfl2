@@ -5,8 +5,6 @@
 #ifndef __RESTART_H__
 #define __RESTART_H__
 
-void quitGame(char* deck);
-
-void playGame();
+void quitGame();
 
 #endif
