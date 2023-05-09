@@ -10,6 +10,7 @@ void moveFromTo(Card *card1, Card *card2) {
     while (card1->suit != 'X') {
         AddToDeck(card1, card2);
         card1 = nextCard;
+        DeleteList(card1);
         nextCard = card1->next;
     }
 
