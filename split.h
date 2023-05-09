@@ -11,6 +11,6 @@ void shuffleDeck(Card *card1, Card *card2);
 
 void splitAndShuffleDeck(Card *card, int split);
 
-void splitDeck(Card *card, int split);
+void splitDeck(int split);
 
 #endif
