@@ -1,5 +1,4 @@
 #include "linkedlists.h"
-#include <stdio.h>
 
 /**
  * Adds a card to the deck
