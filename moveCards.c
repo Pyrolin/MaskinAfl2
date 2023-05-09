@@ -9,13 +9,17 @@ void moveFromTo(Card *card1, Card *card2) {
 
     while (card1->suit != 'X') {
         AddToDeck(card1, card2);
+        card2 = card1;
         card1 = nextCard;
+        if (card1->suit == 'X') {
+            break;
+        }
         DeleteList(card1);
         nextCard = card1->next;
     }
 
 }
-char getPreviousValue(char value){
+char getPrevValue(char value){
     switch (value) {
         case 'K':{
             return 'Q';
@@ -135,37 +139,87 @@ void moveToDst(Card *card, char destColumn[]) {
             moveFromTo(card, lastCard);
         }
 
-    }
-    if(strcmp(destColumn,"c2")){
+    } else if(destColumn[0] == 'c' && destColumn[1] == '2'){
+
+        Card* lastCard = C2->previous->previous;
+
+        if (getNextValue(card->value) == lastCard->value) {
+            moveFromTo(card, lastCard);
+        }
+
+    } else if(destColumn[0] == 'c' && destColumn[1] == '3'){
+
+        Card* lastCard = C3->previous->previous;
+
+        if (getNextValue(card->value) == lastCard->value) {
+            moveFromTo(card, lastCard);
+        }
+
+    } else if(destColumn[0] == 'c' && destColumn[1] == '4'){
+
+        Card* lastCard = C4->previous->previous;
+
+        if (getNextValue(card->value) == lastCard->value) {
+            moveFromTo(card, lastCard);
+        }
+
+    } else if(destColumn[0] == 'c' && destColumn[1] == '5'){
+
+        Card* lastCard = C5->previous->previous;
+
+        if (getNextValue(card->value) == lastCard->value) {
+            moveFromTo(card, lastCard);
+        }
+
+    } else if(destColumn[0] == 'c' && destColumn[1] == '6'){
+
+        Card* lastCard = C6->previous->previous;
+
+        if (getNextValue(card->value) == lastCard->value) {
+            moveFromTo(card, lastCard);
+        }
+
+    } else if(destColumn[0] == 'c' && destColumn[1] == '7'){
+
+        Card* lastCard = C7->previous->previous;
+
+        if (getNextValue(card->value) == lastCard->value) {
+            moveFromTo(card, lastCard);
+        }
 
     }
-    if(strcmp(destColumn,"c3")){
 
-    }
-    if(strcmp(destColumn,"c4")){
 
-    }
-    if(strcmp(destColumn,"c5")){
+    if(destColumn[0] == 'f' && destColumn[1] == '1'){
 
-    }
-    if(strcmp(destColumn,"c6")){
+        Card* lastCard = F1->previous->previous;
 
-    }
-    if(strcmp(destColumn,"c7")){
+        if (getPrevValue(card->value) == lastCard->value) {
+            moveFromTo(card, lastCard);
+        }
+    } else if(destColumn[0] == 'f' && destColumn[1] == '2'){
 
-    }
-    if(strcmp(destColumn,"f1")){
+        Card* lastCard = F2->previous->previous;
 
-    }
-    if(strcmp(destColumn,"f2")){
+        if (getPrevValue(card->value) == lastCard->value) {
+            moveFromTo(card, lastCard);
+        }
+    } else if(destColumn[0] == 'f' && destColumn[1] == '3'){
 
-    }
-    if(strcmp(destColumn,"f3")){
+        Card* lastCard = F3->previous->previous;
 
-    }
-    if(strcmp(destColumn,"f4")){
+        if (getPrevValue(card->value) == lastCard->value) {
+            moveFromTo(card, lastCard);
+        }
+    } else if(destColumn[0] == 'f' && destColumn[1] == '4'){
 
+        Card* lastCard = F4->previous->previous;
+
+        if (getPrevValue(card->value) == lastCard->value) {
+            moveFromTo(card, lastCard);
+        }
     }
+
 
 }
 
@@ -206,7 +260,7 @@ void moveCards(char command[]) {
             found = 0;
         }
 
-        while (current->suit != suit && current->value != value && found == 1) {
+        while ((current->suit != suit || current->value != value) && found == 1) {
             current = current->next;
 
             if (current->value == 'X') {
@@ -235,7 +289,7 @@ void moveCards(char command[]) {
             found = 0;
         }
 
-        while (current->suit != suit && current->value != value && found == 1) {
+        while ((current->suit != suit || current->value != value) && found == 1) {
             current = current->next;
 
             if (current->value == 'X') {
@@ -264,7 +318,7 @@ void moveCards(char command[]) {
             found = 0;
         }
 
-        while (current->suit != suit && current->value != value && found == 1) {
+        while ((current->suit != suit || current->value != value) && found == 1) {
             current = current->next;
 
             if (current->value == 'X') {
@@ -293,7 +347,7 @@ void moveCards(char command[]) {
             found = 0;
         }
 
-        while (current->suit != suit && current->value != value && found == 1) {
+        while ((current->suit != suit || current->value != value) && found == 1) {
             current = current->next;
 
             if (current->value == 'X') {
@@ -322,7 +376,7 @@ void moveCards(char command[]) {
             found = 0;
         }
 
-        while (current->suit != suit && current->value != value && found == 1) {
+        while ((current->suit != suit || current->value != value) && found == 1) {
             current = current->next;
 
             if (current->value == 'X') {
@@ -351,7 +405,7 @@ void moveCards(char command[]) {
             found = 0;
         }
 
-        while (current->suit != suit && current->value != value && found == 1) {
+        while ((current->suit != suit || current->value != value) && found == 1) {
             current = current->next;
 
             if (current->value == 'X') {
@@ -380,7 +434,7 @@ void moveCards(char command[]) {
             found = 0;
         }
 
-        while (current->suit != suit && current->value != value && found == 1) {
+        while ((current->suit != suit || current->value != value) && found == 1) {
             current = current->next;
 
             if (current->value == 'X') {
@@ -409,7 +463,7 @@ void moveCards(char command[]) {
             found = 0;
         }
 
-        while (current->suit != suit && current->value != value && found == 1) {
+        while ((current->suit != suit || current->value != value) && found == 1) {
             current = current->next;
 
             if (current->value == 'X') {
@@ -438,7 +492,7 @@ void moveCards(char command[]) {
             found = 0;
         }
 
-        while (current->suit != suit && current->value != value && found == 1) {
+        while ((current->suit != suit || current->value != value) && found == 1) {
             current = current->next;
 
             if (current->value == 'X') {
@@ -467,7 +521,7 @@ void moveCards(char command[]) {
             found = 0;
         }
 
-        while (current->suit != suit && current->value != value && found == 1) {
+        while ((current->suit != suit || current->value != value) && found == 1) {
             current = current->next;
 
             if (current->value == 'X') {
@@ -496,7 +550,7 @@ void moveCards(char command[]) {
             found = 0;
         }
 
-        while (current->suit != suit && current->value != value && found == 1) {
+        while ((current->suit != suit || current->value != value) && found == 1) {
             current = current->next;
 
             if (current->value == 'X') {
