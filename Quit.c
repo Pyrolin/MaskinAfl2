@@ -1,10 +1,8 @@
 #include <stdlib.h>
 #include "main.h"
 // True/False
-void quit(){
-
-
-
+void quit() {
+    extern int isRunning;
     isRunning = 0;
 }
 
