@@ -6,7 +6,7 @@
 int isRunning;
 char PHASE[]  = "STARTUP";
 char lastCommand[6] = "";
-char message[] = "";
+char message[255];
 
 Card *deck;
 
