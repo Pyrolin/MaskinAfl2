@@ -2,7 +2,7 @@
 #include <string.h>
 #include "play.h"
 #include "load.h"
-
+#include "moveCards.h"
 void startPhase(char input[]) {
     if(strcmp(input, "LD") == 0) {
         load();
@@ -27,8 +27,10 @@ void startPhase(char input[]) {
 
 
 void playPhase(char input[]) {
-    if (strcmp(input, "Q") != 0){
+    if (strcmp(input, "Q") == 0){
         //do the return command
+    } else {
+        moveCards(input);
     }
     //move function
 }
