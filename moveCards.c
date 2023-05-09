@@ -2,7 +2,7 @@
 #include "linkedlists.h"
 
 void moveToDst(Card *card, char command[]) {
-    /*
+
     if(strcmp(srcColoumn,"c1")){
 
     }
@@ -36,7 +36,7 @@ void moveToDst(Card *card, char command[]) {
     if(strcmp(srcColoumn,"f4")){
 
     }
-     */
+
 }
 
 void moveCards(char command[]) {
@@ -60,11 +60,11 @@ void moveCards(char command[]) {
     char srcCard[2];
     char destColumn[2];
     char srcColoumn[2];
-    strncpy(destColumn,&command[6],2);
-    strncpy(srcCard,&command[2],2);
+    strncpy(destColumn,&command[7],2);
+    strncpy(srcCard,&command[3],2);
     strncpy(srcColoumn,command,2);
 
-    if(strcmp(srcColoumn,"c1")){
+    if(srcColoumn[0] == 'c' && srcColoumn[1] == '1'){
         char value = srcCard[0];
         char suit = srcCard[1];
 
@@ -84,7 +84,7 @@ void moveCards(char command[]) {
             }
         }
 
-        if (found = 0) {
+        if (!found) {
             strcpy(message,"This move is not valid");
 
         } else {
@@ -93,7 +93,7 @@ void moveCards(char command[]) {
 
 
     }
-    if(strcmp(srcColoumn,"c2")){
+    if(srcColoumn[0] == 'c' && srcColoumn[1] == '2'){
         char value = srcCard[0];
         char suit = srcCard[1];
 
@@ -113,7 +113,7 @@ void moveCards(char command[]) {
             }
         }
 
-        if (found = 0) {
+        if (!found) {
             strcpy(message,"This move is not valid");
 
         } else {
@@ -122,7 +122,7 @@ void moveCards(char command[]) {
 
 
     }
-    if(strcmp(srcColoumn,"c3")){
+    if(srcColoumn[0] == 'c' && srcColoumn[1] == '3'){
         char value = srcCard[0];
         char suit = srcCard[1];
 
@@ -142,7 +142,7 @@ void moveCards(char command[]) {
             }
         }
 
-        if (found = 0) {
+        if (!found) {
             strcpy(message,"This move is not valid");
 
         } else {
@@ -151,7 +151,7 @@ void moveCards(char command[]) {
 
 
     }
-    if(strcmp(srcColoumn,"c4")){
+    if(srcColoumn[0] == 'c' && srcColoumn[1] == '4'){
         char value = srcCard[0];
         char suit = srcCard[1];
 
@@ -171,7 +171,7 @@ void moveCards(char command[]) {
             }
         }
 
-        if (found = 0) {
+        if (!found) {
             strcpy(message,"This move is not valid");
 
         } else {
@@ -180,7 +180,7 @@ void moveCards(char command[]) {
 
 
     }
-    if(strcmp(srcColoumn,"c5")){
+    if(srcColoumn[0] == 'c' && srcColoumn[1] == '5'){
         char value = srcCard[0];
         char suit = srcCard[1];
 
@@ -200,7 +200,7 @@ void moveCards(char command[]) {
             }
         }
 
-        if (found = 0) {
+        if (!found) {
             strcpy(message,"This move is not valid");
 
         } else {
@@ -209,7 +209,7 @@ void moveCards(char command[]) {
 
 
     }
-    if(strcmp(srcColoumn,"c6")){
+    if(srcColoumn[0] == 'c' && srcColoumn[1] == '6'){
         char value = srcCard[0];
         char suit = srcCard[1];
 
@@ -229,7 +229,7 @@ void moveCards(char command[]) {
             }
         }
 
-        if (found = 0) {
+        if (!found) {
             strcpy(message,"This move is not valid");
 
         } else {
@@ -238,7 +238,7 @@ void moveCards(char command[]) {
 
 
     }
-    if(strcmp(srcColoumn,"c7")){
+    if(srcColoumn[0] == 'c' && srcColoumn[1] == '7'){
         char value = srcCard[0];
         char suit = srcCard[1];
 
@@ -258,7 +258,7 @@ void moveCards(char command[]) {
             }
         }
 
-        if (found = 0) {
+        if (!found) {
             strcpy(message,"This move is not valid");
 
         } else {
@@ -267,7 +267,7 @@ void moveCards(char command[]) {
 
 
     }
-    if(strcmp(srcColoumn,"f1")){
+    if(srcColoumn[0] == 'f' && srcColoumn[1] == '1'){
         char value = srcCard[0];
         char suit = srcCard[1];
 
@@ -287,7 +287,7 @@ void moveCards(char command[]) {
             }
         }
 
-        if (found = 0) {
+        if (!found) {
             strcpy(message,"This move is not valid");
 
         } else {
@@ -296,7 +296,7 @@ void moveCards(char command[]) {
 
 
     }
-    if(strcmp(srcColoumn,"f2")){
+    if(srcColoumn[0] == 'f' && srcColoumn[1] == '2'){
         char value = srcCard[0];
         char suit = srcCard[1];
 
@@ -316,7 +316,7 @@ void moveCards(char command[]) {
             }
         }
 
-        if (found = 0) {
+        if (!found) {
             strcpy(message,"This move is not valid");
 
         } else {
@@ -325,7 +325,7 @@ void moveCards(char command[]) {
 
 
     }
-    if(strcmp(srcColoumn,"f3")){
+    if(srcColoumn[0] == 'f' && srcColoumn[1] == '3'){
         char value = srcCard[0];
         char suit = srcCard[1];
 
@@ -345,7 +345,7 @@ void moveCards(char command[]) {
             }
         }
 
-        if (found = 0) {
+        if (!found) {
             strcpy(message,"This move is not valid");
 
         } else {
@@ -354,7 +354,7 @@ void moveCards(char command[]) {
 
 
     }
-    if(strcmp(srcColoumn,"f4")){
+    if(srcColoumn[0] == 'f' && srcColoumn[1] == '4'){
         char value = srcCard[0];
         char suit = srcCard[1];
 
@@ -374,7 +374,7 @@ void moveCards(char command[]) {
             }
         }
 
-        if (found = 0) {
+        if (!found) {
             strcpy(message,"This move is not valid");
 
         } else {
