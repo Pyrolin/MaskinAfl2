@@ -1,8 +1,18 @@
-#include "delete.c"
-#include "addToDeck.c"
+#include "delete.h"
+#include "split.h"
 #include "main.h"
+#include "addToDeck.h"
 
 void dealCards() {
+    extern Card* deck;
+    extern Card* C1;
+    extern Card* C2;
+    extern Card* C3;
+    extern Card* C4;
+    extern Card* C5;
+    extern Card* C6;
+    extern Card* C7;
+
     Card *prev = deck->previous->previous;
     DeleteList(prev);
     C1 = AddToDeck(prev, NULL);
