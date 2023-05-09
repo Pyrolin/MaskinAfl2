@@ -1,8 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "linkedlists.h"
-#include "addToDeck.c"
-#include "linkedlists.c"
+#include "addToDeck.h"
 #define MAX_CARDS 52
 
 void shuffleDeck(Card *card1, Card *card2) {
@@ -65,7 +64,6 @@ void splitDeck(Card *card, int split) {
 
     Card *deck1 = dummy1;
     Card *deck2 = dummy2;
-
 
     while (card->suit != 'X') { // while not at the end
         if (count < split) {
